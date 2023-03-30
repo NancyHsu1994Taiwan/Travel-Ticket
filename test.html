@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let sentToAirport = true;
+      let p = new Promise((resolve, reject) => {
+        if (sentToAirport) {
+          resolve("form resolve():send to airport");
+        } else {
+          reject("from reject(): cannot send to airport");
+        }
+      });
+
+      p.then((message) => {
+        console.log(`${message}-promse resolved`);
+      }).catch((message) => {
+        console.log(`${message}-promise rejected`);
+      });
+
+      let f = fetch("https://jsonplaceholder.typicode.com/users");
+      // 此時f是一個promise
+
+      f.then((userData) => {
+        console.log(userData);
+        // return userData.json();
+        // 需先轉換格式，再在下一個then獲取資料
+      });
+      // .then((jsonData) => {
+      //   console.log(jsonData);
+      // });
+    </script>
+  </body>
+</html>

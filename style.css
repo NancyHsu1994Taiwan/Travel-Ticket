@@ -244,12 +244,17 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  justify-content: space-between;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   max-width: 920px;
   margin: 0 auto;
   padding: 50px 0;
+}
+
+.search-area-box {
+  width: 100%;
 }
 
 .search-area p {
@@ -454,4 +459,7 @@ ul {
   .cantFind-area {
     margin-top: 0px;
   }
+}
+#donut {
+  width: 250px;
 }
